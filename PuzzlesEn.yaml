@@ -1,0 +1,3 @@
+NightMana:
+  Name: Nighttime Fatigue
+  Description: "Whenever you reshuffle the discard pile into the draw pile during your turn, gain |Time Limit| <sprite=\"ManaSprite\" name=\"1\"> (only after the draw step)."

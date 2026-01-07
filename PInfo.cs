@@ -6,7 +6,7 @@ namespace LongNightTimeLimit
     {
         public const string GUID = "rokk.lbol.gameplay.LongNightTimeLimit";
         public const string Name = "LongNightTimeLimit";
-        public const string version = "0.0.1";
+        public const string version = "0.0.2";
         public static readonly Harmony harmony = new Harmony(GUID);
 
     }

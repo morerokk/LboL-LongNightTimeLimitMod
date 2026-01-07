@@ -1,19 +1,20 @@
 {
   "Title": "Long Night Time Limit",
-  "Description": "Experiment that replaces Long Night with a stacking Time Limit debuff whenever the draw pile is shuffled mid-turn.",
+  "Description": "Experiment that replaces Long Night with a stacking Time Limit debuff whenever the draw pile is shuffled mid-turn. You can tweak the behavior in the BepInEx config for this mod.",
   "Brief": "Experiment that replaces Long Night with a stacking Time Limit debuff whenever the draw pile is shuffled mid-turn.",
   "Changelog": [
+    "0.0.2: \nAdded BepInEx config options to configure the mod.",
     "0.0.1: \nInitial Release."
   ],
-  "Version": "0.0.1",
+  "Version": "0.0.2",
   "Author": "Rokk",
   "Tags": [
     "Mod",
     "Gameplay",
-	"Misc"
+    "Misc"
   ],
-  "PublishedFileId": 0,
-  "AuthorId": 0,
+  "PublishedFileId": 3637669349,
+  "AuthorId": 76561197996000877,
   "GUID": "rokk.lbol.gameplay.LongNightTimeLimit",
   "Dependencies": null,
   "LastUpdateTime": 0

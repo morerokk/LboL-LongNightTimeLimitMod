@@ -77,9 +77,9 @@ namespace LongNightTimeLimit
 
         private void SetupConfig()
         {
-            FreeReshuffles = Config.Bind("Tweaks", nameof(FreeReshuffles), 1, "Amount of reshuffles that are ignored before Time Limit starts being added.");
+            FreeReshuffles = Config.Bind("Tweaks", nameof(FreeReshuffles), 0, "Amount of reshuffles that are ignored before Time Limit starts being added.");
             DrawStepIsFree = Config.Bind("Tweaks", nameof(DrawStepIsFree), false, "If true, reshuffling during the draw step is always considered free and won't be counted.");
-            EveryXReshuffles = Config.Bind("Tweaks", nameof(EveryXReshuffles), 1, "1 in X reshuffles will add Time Limit, where X is this value. Only starts counting after the free reshuffles are exhausted.");
+            EveryXReshuffles = Config.Bind("Tweaks", nameof(EveryXReshuffles), 2, "1 in X reshuffles will add Time Limit, where X is this value. Only starts counting after the free reshuffles are exhausted.");
             TimeLimitStackGainCount = Config.Bind("Tweaks", nameof(TimeLimitStackGainCount), 1, "The amount of Time Limit to be added.");
             GiftsGivenIsFree = Config.Bind("Tweaks", nameof(GiftsGivenIsFree), true, "If true, cards that trigger reshuffles forcibly when played (such as Gifts Given) are considered free and won't be counted. (Currently unused because work in progress, it's unclear if this card even counts in the first place)");
         }

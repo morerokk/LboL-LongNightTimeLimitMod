@@ -26,6 +26,8 @@ I recommend using the Steam Workshop or r2modman to install this mod (links belo
 
 The mod generates a Bepinex config file when run. Check `rokk.lbol.gameplay.LongNightTimeLimit.cfg` in the `config` folder for more options.
 
+By default, Time Limit 1 is added every 2 reshuffles in your turn (2nd, 4th, 6th, 8th reshuffle and so on).
+
 ## Building
 
 Clone this project, make sure the References are set up correctly (manually edit the `.csproj` to change the game dir), and then open the solution with Visual Studio. I use VS2022.

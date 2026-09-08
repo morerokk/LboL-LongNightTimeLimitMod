@@ -10,13 +10,9 @@ namespace LongNightTimeLimit.Patches
     [HarmonyPatch(typeof(BattleController), nameof(BattleController.StartBattle))]
     class BattleControllerStartBattlePatches
     {
-        // Kinda ugly, but keep track of variables with private static fields
-        // Should work fine if we can assume the game actions are all single-threaded
-        private static int ReshufflesThisTurn = 0;
-
         static void Postfix(BattleController __instance)
         {
-            ReshufflesThisTurn = 0;
+            ReshuffleTracker.Reset();
 
             // Only run if Long Night is enabled
             if (__instance.GameRun.Puzzles.HasFlag(PuzzleFlag.NightMana))
@@ -34,7 +30,7 @@ namespace LongNightTimeLimit.Patches
 
         private static void HandlePlayerTurnStarting(UnitEventArgs args, BattleController controller)
         {
-            ReshufflesThisTurn = 0;
+            ReshuffleTracker.Reset();
         }
 
         private static void HandleReshuffle(GameEventArgs args, BattleController controller)
@@ -50,16 +46,10 @@ namespace LongNightTimeLimit.Patches
                 return;
             }
 
-            ReshufflesThisTurn += 1;
+            ReshuffleTracker.NotifyReshuffled();
 
-            // Check if this is a free reshuffle
-            if (ReshufflesThisTurn <= BepinexPlugin.ConfigFreeReshuffles)
-            {
-                return;
-            }
-
-            int shuffleCountCompensated = ReshufflesThisTurn - BepinexPlugin.ConfigFreeReshuffles;
-            if (shuffleCountCompensated % BepinexPlugin.ConfigEveryXReshuffles != 0)
+            // Check for free reshuffles.
+            if (!ReshuffleTracker.Penalize())
             {
                 return;
             }

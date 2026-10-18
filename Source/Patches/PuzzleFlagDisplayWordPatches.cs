@@ -38,6 +38,11 @@ namespace LongNightTimeLimit.Patches
                     tooltip.Append(" Reshuffling during the draw step does not count towards this penalty.");
                 }
 
+                if (BepinexPlugin.ConfigGiftsGivenIsFree)
+                {
+                    tooltip.Append(" Card effects that shuffle the discard pile into the draw pile do not count.");
+                }
+
                 __result = tooltip.ToString();
             }
         }

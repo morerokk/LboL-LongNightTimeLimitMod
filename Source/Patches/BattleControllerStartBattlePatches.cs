@@ -49,6 +49,13 @@ namespace LongNightTimeLimit.Patches
                 return;
             }
 
+            // If Gifts Given and such should be free, then we check if this reshuffle was caused by one such card.
+            // Reshuffles don't have an ActionCause if they're caused by drawing cards, but they do if triggered by a card directly.
+            if (BepinexPlugin.ConfigGiftsGivenIsFree && (args.Cause != ActionCause.None || args.ActionSource != null))
+            {
+                return;
+            }
+
             ReshuffleTracker.NotifyReshuffled();
 
             // Check for free reshuffles.

@@ -3,7 +3,7 @@
   "Description": "Experiment that replaces Long Night with a stacking Time Limit debuff whenever the draw pile is shuffled mid-turn. You can tweak the behavior in the BepInEx config for this mod.",
   "Brief": "Experiment that replaces Long Night with a stacking Time Limit debuff whenever the draw pile is shuffled mid-turn.",
   "Changelog": [
-    "0.0.4: \nAdded config option to re-enable the vanilla Long Night card, *in addition* to this mod's Time Limit effect.",
+    "0.0.4: \nAdded config option to re-enable the vanilla Long Night card, *in addition* to this mod's Time Limit effect.\nImplemented the previously-unused 'GiftsGivenIsFree' config option.",
     "0.0.3: \nAdded UI indicator for how many reshuffles are left.",
     "0.0.2: \nAdded BepInEx config options to configure the mod.",
     "0.0.1: \nInitial Release."

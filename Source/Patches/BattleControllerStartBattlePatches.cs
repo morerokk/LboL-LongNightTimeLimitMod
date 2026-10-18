@@ -23,8 +23,11 @@ namespace LongNightTimeLimit.Patches
                 // Add Time Limit on reshuffle
                 __instance.Reshuffled.AddHandler((GameEventArgs args) => HandleReshuffle(args, __instance), GameEventPriority.ConfigDefault);
 
-                // Cancel any attempts to add Long Night to the hand
-                __instance.CardsAddingToHand.AddHandler((CardsEventArgs args) => HandleCardsAddingToHand(args, __instance), GameEventPriority.Highest);
+                if (!BepinexPlugin.ConfigEnableNightMana)
+                {
+                    // Cancel any attempts to add Long Night to the hand
+                    __instance.CardsAddingToHand.AddHandler((CardsEventArgs args) => HandleCardsAddingToHand(args, __instance), GameEventPriority.Highest);
+                }
             }
         }
 

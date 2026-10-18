@@ -43,12 +43,18 @@ namespace LongNightTimeLimit
         /// (Currently unused)
         /// </summary>
         private static ConfigEntry<bool> GiftsGivenIsFree;
+        /// <summary>
+        /// If true, keeps the existing Long Night cards untouched instead of removing them.
+        /// </summary>
+        /// (Masochism/L8 mode real?)
+        private static ConfigEntry<bool> EnableNightMana;
 
         public static int ConfigFreeReshuffles => FreeReshuffles.Value;
         public static bool ConfigDrawStepIsFree => DrawStepIsFree.Value;
         public static int ConfigEveryXReshuffles => EveryXReshuffles.Value;
         public static int ConfigTimeLimitStackGainCount => TimeLimitStackGainCount.Value;
         public static bool ConfigGiftsGivenIsFree => GiftsGivenIsFree.Value;
+        public static bool ConfigEnableNightMana => EnableNightMana.Value;
 
 
         void Awake()
@@ -82,6 +88,7 @@ namespace LongNightTimeLimit
             EveryXReshuffles = Config.Bind("Tweaks", nameof(EveryXReshuffles), 2, "1 in X reshuffles will add Time Limit, where X is this value. Only starts counting after the free reshuffles are exhausted.");
             TimeLimitStackGainCount = Config.Bind("Tweaks", nameof(TimeLimitStackGainCount), 1, "The amount of Time Limit to be added.");
             GiftsGivenIsFree = Config.Bind("Tweaks", nameof(GiftsGivenIsFree), true, "If true, cards that trigger reshuffles forcibly when played (such as Gifts Given) are considered free and won't be counted. (Currently unused because work in progress, it's unclear if this card even counts in the first place)");
+            EnableNightMana = Config.Bind("Tweaks", nameof(EnableNightMana), false, "If true, the vanilla Long Night card is kept enabled, rather than being removed by the mod. Makes the game a lot more difficult. Recommended for those seeking an L8 challenge.");
         }
     }
 }
